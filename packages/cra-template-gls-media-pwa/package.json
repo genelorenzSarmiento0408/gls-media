@@ -1,6 +1,6 @@
 {
   "name": "cra-template-gls-media-pwa",
-  "version": "0.1.0",
+  "version": "1.0.0-beta.1",
   "private": false,
   "keywords": [
     "react",
@@ -8,7 +8,7 @@
     "template",
     "GLS-Media"
   ],
-  "description": "The base template for Create React App.",
+  "description": "The base template for Create React App for GLS-Media",
   "repository": {
     "type": "git",
     "url": "https://github.com/genelorenzSarmiento0408/gls-media.git",

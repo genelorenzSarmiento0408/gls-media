@@ -1,19 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import About from "./components/About";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(
+    // parse the localStorage value, since count is a string
+    parseInt(localStorage.getItem("count")) || 0,
+  );
 
-  const handleClick = () => {
-    setCount(count + 1);
+  useEffect(() => {
+    localStorage.setItem("count", count);
+  }, [count]);
+  const increaseCnt = () => {
+    setCount((prevCount) => prevCount + 1);
   };
 
   return (
-    <div style={styles} className="App">
+    <div className="App">
       <div className="container">
         <About />
-        <button onClick={handleClick}>Click me</button>
-        <div>{count}</div>
+        <button onClick={increaseCnt}>Click me to increase the count</button>
+        <br />
+        <div className="circle">{count}</div>
       </div>
     </div>
   );
